@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Workspace [
+
+<!-- Common Elements -->
+<!ELEMENT Identifier (#PCDATA)>
+<!ELEMENT Comments (#PCDATA)>
+<!ELEMENT MasterDirectory (#PCDATA)>
+<!ELEMENT CreationDate (#PCDATA)>
+
+<!-- Workspace Elements-->
+<!ELEMENT Workspace ( Identifier,
+               CreateVersion,
+               PJS_File?,
+               PJS_ConvertDate?,
+               PJS_CreateDate?,
+               Comments?,
+               Project*)>
+
+<!ATTLIST Workspace 
+      CurrentVersion CDATA   #REQUIRED> 
+
+<!ELEMENT CreateVersion     (#PCDATA)>
+
+
+<!-- Conversion data only: only included for files converted from the old .pjs database -->
+<!ELEMENT PJS_File (#PCDATA)>
+<!ELEMENT PJS_ConvertDate (#PCDATA)>
+<!ELEMENT PJS_CreateDate (#PCDATA)>
+
+<!ELEMENT Project ( Identifier,
+               Designer?,
+               DealerID?,
+               SalesOrder?,
+               PurchaseOrder?,
+               Comments?,
+               System*)>
+
+<!ELEMENT Designer (#PCDATA)>
+<!ELEMENT DealerID (#PCDATA)>
+<!ELEMENT SalesOrder (#PCDATA)>
+<!ELEMENT PurchaseOrder (#PCDATA)>
+
+
+<!ELEMENT System  (  Identifier,
+                 SysID,
+                 TransTCPIP?,
+                 TransSerial?,
+                 TransTCPIPEx?,
+                 TransSerialEx?,
+                 TransUSBEx?,
+                 TransVNMEx?,
+                 VirtualNetLinxMasterFlag?,
+                 VNMSystemID?,
+                 VNMIPAddress?,
+                 VNMMaskAddress?,
+                 UserName?,
+                 Password?,
+                 Comments?,
+                 File*)>
+
+<!ATTLIST System
+      IsActive   (true | false)   "false"
+      Platform   (Axcess | Netlinx)   "Axcess"
+      Transport   (Serial | Modem | TCPIP) "Serial"
+      TransportEx   (Serial | USB | TCPIP | VNM) "Serial">
+
+<!ELEMENT SysID (#PCDATA)>
+<!ELEMENT TransSerial (#PCDATA)>
+<!ELEMENT TransTCPIP (#PCDATA)>
+<!ELEMENT TransTCPIPEx (#PCDATA)>
+<!ELEMENT TransSerialEx (#PCDATA)>
+<!ELEMENT TransUSBEx (#PCDATA)>
+<!ELEMENT TransVNMEx (#PCDATA)>
+<!ELEMENT VNMSystemID (#PCDATA)>
+<!ELEMENT VNMIPAddress (#PCDATA)>
+<!ELEMENT VNMMaskAddress (#PCDATA)>
+<!ELEMENT VirtualNetLinxMasterFlag (#PCDATA)>
+<!ELEMENT UserName (#PCDATA)>
+<!ELEMENT Password (#PCDATA)>
+
+
+<!ELEMENT File ( Identifier,
+               FilePathName,
+               Comments?,
+               MasterDirectory?,
+               DeviceMap*,
+               IRDB*)>
+
+<!ATTLIST File 
+       Type (Source | MasterSrc | Include | Module | AXB | IR | TPD | TP4 | TP5 | KPD | TKO | AMX_IR_DB | IRN_DB | Other | DUET | TOK | TKN | KPB | XDD ) "Other"
+       CompileType (Axcess | Netlinx | None) "None"> 
+
+<!ELEMENT FilePathName	(#PCDATA)>
+                            
+<!ELEMENT DeviceMap (DevName)>
+       <!ATTLIST DeviceMap DevAddr CDATA #REQUIRED>
+
+       <!ELEMENT DevName (#PCDATA)>
+
+<!ELEMENT IRDB    (Property,
+                 DOSName,
+                 UserDBPathName,
+                 Notes)>
+       <!ATTLIST IRDB DBKey CDATA #REQUIRED>
+
+       <!ELEMENT Property (#PCDATA)>
+       <!ELEMENT DOSName (#PCDATA)>
+       <!ELEMENT UserDBPathName (#PCDATA)>
+       <!ELEMENT Notes (#PCDATA)>
+]>
+
+<Workspace CurrentVersion="4.0"><Identifier>Netlinx_Professional_Program</Identifier>
+<CreateVersion>4.0</CreateVersion>
+<PJS_File></PJS_File>
+<PJS_ConvertDate></PJS_ConvertDate>
+<PJS_CreateDate></PJS_CreateDate>
+<Comments></Comments>
+<Project><Identifier>AMX_Professional_Programming_Practical</Identifier>
+<Designer></Designer>
+<DealerID></DealerID>
+<SalesOrder></SalesOrder>
+<PurchaseOrder></PurchaseOrder>
+<Comments></Comments>
+<System IsActive="true" Platform="Netlinx" Transport="Serial" TransportEx="TCPIP"><Identifier>NI-3101-SIG</Identifier>
+<SysID>0</SysID>
+<TransTCPIP>0.0.0.0</TransTCPIP>
+<TransSerial>COM1,115200,8,None,1,None</TransSerial>
+<TransTCPIPEx>198.18.0.1|1319|1|4200 [ICSLAN]||</TransTCPIPEx>
+<TransSerialEx>COM1|38400|8|None|1|None||</TransSerialEx>
+<TransUSBEx>|||||</TransUSBEx>
+<TransVNMEx>10.0.0.1|1|&lt;Default&gt;</TransVNMEx>
+<VirtualNetLinxMasterFlag>false</VirtualNetLinxMasterFlag>
+<VNMSystemID>1</VNMSystemID>
+<VNMIPAddress>10.0.0.1</VNMIPAddress>
+<VNMMaskAddress>255.255.255.0</VNMMaskAddress>
+<UserName></UserName>
+<Password></Password>
+<Comments></Comments>
+<File CompileType="Netlinx" Type="Include"><Identifier>Control Function DVD Player</Identifier>
+<FilePathName>Control Function DVD Player.axi</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="Netlinx" Type="Include"><Identifier>Control Function Light</Identifier>
+<FilePathName>Control Function Light.axi</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="Netlinx" Type="Include"><Identifier>Control Function Projector</Identifier>
+<FilePathName>Control Function Projector.axi</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="Netlinx" Type="Include"><Identifier>Control Function Sony Camera</Identifier>
+<FilePathName>Control Function Sony Camera.axi</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="Netlinx" Type="Include"><Identifier>Control Function System Power</Identifier>
+<FilePathName>Control Function System Power.axi</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="Netlinx" Type="Include"><Identifier>Control Function Video Switch</Identifier>
+<FilePathName>Control Function Video Switch.axi</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="Netlinx" Type="Include"><Identifier>Control Function Virtual Keypad</Identifier>
+<FilePathName>Control Function Virtual Keypad.axi</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="Netlinx" Type="Include"><Identifier>Control Functions Common</Identifier>
+<FilePathName>Control Functions Common.axi</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="Netlinx" Type="Include"><Identifier>G4API</Identifier>
+<FilePathName>G4API.axi</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="Netlinx" Type="IR"><Identifier>DIRECTv8_DISCRETES</Identifier>
+<FilePathName>IR\DIRECTv8_DISCRETES.IRL</FilePathName>
+<Comments></Comments>
+<DeviceMap DevAddr="dvHDMIReceiver"><DevName>dvHDMIReceiver</DevName>
+</DeviceMap>
+</File>
+<File CompileType="Netlinx" Type="MasterSrc"><Identifier>main</Identifier>
+<FilePathName>main.axs</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="Netlinx" Type="Other"><Identifier>Sony EVID100 Interface</Identifier>
+<FilePathName>Modules\Sony_EVID100_v1_0_5_dr1_0_0\Sony EVID100 Interface.doc</FilePathName>
+<Comments></Comments>
+<MasterDirectory>\</MasterDirectory>
+</File>
+<File CompileType="Netlinx" Type="DUET"><Identifier>Sony_EVID100_Comm_dr1_0_0</Identifier>
+<FilePathName>Modules\Sony_EVID100_v1_0_5_dr1_0_0\Sony_EVID100_Comm_dr1_0_0.jar</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="Netlinx" Type="DUET"><Identifier>VirtualKeypad_dr1_0_0</Identifier>
+<FilePathName>Modules\VirtualKeypad_2_0_1\VirtualKeypad_2_0_1\VirtualKeypad_dr1_0_0.jar</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="Netlinx" Type="TP5"><Identifier>MT-702 Programmer Practical TP5 File</Identifier>
+<FilePathName>MT-702 Programmer Practical TP5 File.TP5</FilePathName>
+<Comments></Comments>
+<DeviceMap DevAddr="dvTP_RoomControl"><DevName>dvTP_RoomControl</DevName>
+</DeviceMap>
+</File>
+<File CompileType="Netlinx" Type="Include"><Identifier>Netlinx Professional Practice Constants</Identifier>
+<FilePathName>Netlinx Professional Practice Constants.axi</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="Netlinx" Type="Include"><Identifier>Netlinx Professional Practice Devices</Identifier>
+<FilePathName>Netlinx Professional Practice Devices.axi</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="Netlinx" Type="Include"><Identifier>Netlinx Professional Practice Libraries</Identifier>
+<FilePathName>Netlinx Professional Practice Libraries.axi</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="Netlinx" Type="Other"><Identifier>Modero.G5.Configuration.Programming.Guide</Identifier>
+<FilePathName>NetlinxProgramManual\Modero.G5.Configuration.Programming.Guide.pdf</FilePathName>
+<Comments></Comments>
+<MasterDirectory>\</MasterDirectory>
+</File>
+<File CompileType="Netlinx" Type="Other"><Identifier>P2_Instructions_2019</Identifier>
+<FilePathName>Resources\P2_Instructions_2019.pdf</FilePathName>
+<Comments></Comments>
+<MasterDirectory>\</MasterDirectory>
+</File>
+<File CompileType="Netlinx" Type="Include"><Identifier>SNAPI</Identifier>
+<FilePathName>SNAPI.axi</FilePathName>
+<Comments></Comments>
+</File>
+</System>
+</Project>
+</Workspace>

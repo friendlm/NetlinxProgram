@@ -1,0 +1,2 @@
+//IP Device (d:p:s), IP Server Address, IP Server Port, IP Protocol (tcp/udp)
+0:4:0,xxx.xxx.xxx.xxx,24,tcp	//Lights
